@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Navbar styling */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+      }
+      
+      /* Logo styling */
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+      }
+      
+      /* Button container styling */
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      
+      /* Button styling */
+      nav li {
+        margin-left: 10px;
+        list-style: none; /* remove bullet points */
+      }
+      
+      nav button {
+        padding: 10px;
+        background-color: #555;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+      }
+      
+      /* Hamburger menu styling */
+      .menu-icon {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      
+      /* Dropdown menu styling */
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        padding: 10px;
+      }
+      
+      .dropdown li {
+        margin: 10px 0;
+        list-style: none; /* remove bullet points */
+      }
+      
+      .dropdown button {
+        display: block;
+        width: 100%;
+        border: none; /* remove button borders */
+        background: none; /* remove button background color */
+        color: #fff;
+        font-size: 16px;
+        padding: 10px;
+        text-align: left;
+        cursor: pointer;
+      }
+      
+      /* Media queries */
+      @media screen and (max-width: 768px) {
+        nav {
+          display: none;
+        }
+        
+        .menu-icon {
+          display: block;
+        }
+        
+        .dropdown {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Logo</h1>
+      <nav>
+        <ul>
+          <li><button>Button 1</button></li>
+          <li><button>Button 2</button></li>
+          <li><button>Button 3</button></li>
+        </ul>
+      </nav>
+      <div class="menu-icon">&#9776;</div>
+      <nav class="dropdown">
+        <ul>
+          <li><button>Button 1</button></li>
+          <li><button>Button 2</button></li>
+          <li><button>Button 3</button></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <script>
+      // Toggle the dropdown menu when clicking the menu icon
+      const menuIcon = document.querySelector('.menu-icon');
+      const dropdown = document.querySelector('.dropdown');
+      menuIcon.addEventListener('click', () => {
+        dropdown.classList.toggle('show');
+      });
+    </script>
+  </body>
+</html>
+
+
+<!-- Versión 2 -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Navbar styling */
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+      }
+      
+      /* Logo styling */
+      h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 0;
+      }
+      
+      /* Button container styling */
+      nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        visibility: visible;
+      }
+      
+      /* Button styling */
+      nav li {
+        margin-left: 10px;
+        list-style: none; /* remove bullet points */
+      }
+      
+      nav button {
+        padding: 10px;
+        background-color: #555;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+      }
+      
+      /* Hamburger menu styling */
+      .menu-icon {
+        display: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      
+      /* Dropdown menu styling */
+      .dropdown {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        padding: 10px;
+        visibility: hidden;
+      }
+      
+      .dropdown li {
+        margin: 10px 0;
+        list-style: none; /* remove bullet points */
+      }
+      
+      .dropdown button {
+        display: block;
+        width: 100%;
+        border: none; /* remove button borders */
+        background: none; /* remove button background color */
+        color: #fff;
+        font-size: 16px;
+        padding: 10px;
+        text-align: left;
+        cursor: pointer;
+      }
+      
+      /* Media queries */
+      @media screen and (max-width: 768px) {
+        nav {
+          visibility: hidden;
+        }
+        
+        .menu-icon {
+          display: block;
+        }
+        
+        .dropdown {
+          visibility: visible;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Logo</h1>
+      <nav>
+        <ul>
+          <li><button>Button 1</button></li>
+          <li><button>Button 2</button></li>
+          <li><button>Button 3</button></li>
+        </ul>
+      </nav>
+      <div class="menu-icon">&#9776;</div>
+      <nav class="dropdown">
+        <ul>
+          <li><button>Button 1</button></li>
+          <li><button>Button 2</button></li>
+          <li><button>Button 3</button></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <script>
+      // Toggle the dropdown menu when clicking the
