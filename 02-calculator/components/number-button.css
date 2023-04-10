@@ -1,0 +1,24 @@
+.number-button-container {
+  display: flex;
+  position: relative;
+}
+.number-button-button {
+  opacity: 1;
+  transition: 0.3s;
+}
+.number-button-button:hover {
+  opacity: 0.65;
+}
+.number-button-button:active {
+  opacity: 0.9;
+}
+
+
+
+
+
+
+
+
+
+

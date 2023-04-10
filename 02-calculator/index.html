@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./script.js">
+  </head>
+  <body>
+    <div>
+      <link href="./body.css" rel="stylesheet" />
+
+      <div class="body-container">
+        <main class="body-body">
+          <div class="body-calculator">
+            <input type="text" placeholder="0" class="body-field-textinput" />
+            <div class="body-container1">
+              
+              <!-- AC -->
+              <button
+                type="button"
+                class="action-button-button button ActionButton"
+              >
+                <span>AC</span>
+              </button>
+
+              <!-- C -->
+              <button
+                type="button"
+                class="action-button-button button ActionButton clear"
+              >
+                <span>C</span>
+              </button>
+              
+              <!-- DELETE -->
+              <button
+                type="button"
+                class="body-button button NumberButton ActionButton Heading back-delete"
+              >
+                <svg viewBox="0 0 1024 1024" class="body-icon">
+                  <path
+                    d="M810 666l-152-154 152-154-60-60-152 154-154-154-60 60 154 154-154 154 60 60 154-154 152 154zM938 128q34 0 60 26t26 60v596q0 34-26 60t-60 26h-640q-40 0-68-38l-230-346 230-346q28-38 68-38h640z"
+                  ></path>
+                </svg>
+              </button>
+              
+              <!-- ÷ -->
+              <button
+                type="button"
+                class="math-operator-button-button button Heading MathOperations"
+                value="/"
+              >
+                <span>÷</span>
+              </button>
+
+              <!-- 7 -->
+              <button
+                type="button"
+                class="number-button-button button NumberButton Heading"
+                value="7"
+              >
+                <span>7</span>
+              </button>
+
+              <!-- 8 -->
+              <button
+                type="button"
+                class="number-button-button button NumberButton Heading"
+                value="8"
+              >
+                <span>8</span>
+              </button>
+
+
+              <!-- 9 -->
+              <button
+                type="button"
+                class="number-button-button button NumberButton Heading"
+                value="9"
+              >
+                <span>9</span>
+              </button>
+
+              <!-- X -->
+              <button
+                type="button"
+                class="math-operator-button-button button Heading MathOperations"
+                value="*"
+              >
+                <span>×</span>
+              </button>
+
+              <!-- 4 -->
+              <button
+                type="button"
+                class="number-button-button button NumberButton Heading"
+                value="4"
+              >
+                <span>4</span>
+              </button>
+
+              <!-- 5 -->
+                <button
+                  type="button"
+                  class="number-button-button button NumberButton Heading"
+                  value="5"
+                >
+                  <span>5</span>
+                </button>
+
+              <!-- 6 -->
+              <button
+                type="button"
+                class="number-button-button button NumberButton Heading"
+                value="6"
+              >
+                <span>6</span>
+              </button>
+
+              <!-- - -->
+              <button
+                type="button"
+                class="math-operator-button-button button Heading MathOperations"
+                value="-"
+              >
+                <span>-</span>
+              </button>
+
+              <!-- 1 -->
+              <button
+                type="button"
+                class="number-button-button button NumberButton Heading"
+                value="1"
+              >
+                <span>1</span>
+              </button>
+
+              <!-- 2 -->
+              <button
+                type="button"
+                class="number-button-button button NumberButton Heading"
+                value="2"
+              >
+                <span>2</span>
+              </button>
+
+              <!-- 3 -->
+              <button
+                type="button"
+                class="number-button-button button NumberButton Heading"
+                value="3"
+              >
+                <span>3</span>
+              </button>
+
+              <!-- + -->
+              <button
+                type="button"
+                class="math-operator-button-button button Heading MathOperations"
+                value="+"
+              >
+                <span>+</span>
+              </button>
+
+              <!-- 0 -->
+              <button
+                type="button"
+                class="body-button1 button NumberButton Heading NumberZero"
+                value="0"
+              >
+                <span>0</span>
+              </button>
+
+              <!-- . -->
+              <button
+                type="button"
+                class="number-button-button button NumberButton ActionButton Heading"
+                value="."
+              >
+                <span>.</span>
+              </button>
+
+              <!-- = -->
+              <button
+                type="button"
+                onclick="calculate()"
+                class="math-operator-button-button button Heading MathOperations equal"
+              >
+                <span>=</span>
+              </button>
+
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

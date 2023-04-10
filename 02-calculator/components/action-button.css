@@ -1,0 +1,16 @@
+.action-button-container {
+  display: flex;
+  position: relative;
+}
+.action-button-button {
+  font-size: 32px;
+  transition: 0.3s;
+}
+.action-button-button:hover {
+  opacity: 0.75;
+}
+.action-button-button:active {
+  opacity: 0.9;
+}
+
+

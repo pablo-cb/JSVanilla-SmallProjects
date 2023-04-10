@@ -1,0 +1,18 @@
+.math-operator-button-container {
+  display: flex;
+  position: relative;
+}
+.math-operator-button-button {
+  transition: 0.3s;
+}
+.math-operator-button-button:hover {
+  opacity: 0.65;
+}
+.math-operator-button-button:active {
+  opacity: 0.9;
+}
+
+
+
+
+
