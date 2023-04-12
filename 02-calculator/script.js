@@ -21,6 +21,31 @@ document.querySelectorAll('.NumberButton').forEach(function (button) {
     });
   });
 
+  // MATH OPERATORS
+document.querySelectorAll('.MathOperations').forEach(function (button){
+  button.addEventListener('click', function () {
+    if (result.value){
+      if (!operator){
+        value1 = result.value;
+      } else{
+        value2 = result.value;
+      }
+      
+      switch (this.value){
+        case "-": {
+          operator = this.value;
+          
+        }
+      }
+    }
+  });
+});
+
+
+// Execute Math Operation
+
+
+
 
   // CLEAR BUTTON
 const clearField = document.querySelector('.clear');
@@ -48,6 +73,8 @@ deleteNumber.addEventListener('click',
       }
   }
 );
+
+
 
 // Update the result element with a given value
 function updateResult(value) {
