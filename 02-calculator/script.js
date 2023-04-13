@@ -3,8 +3,12 @@ let operator = '';
 let value2 = '';
 const result = document.getElementById('result');
 
-let equal = false;
+let equalBoolean = false;
 
+  // EQUAL ACTION
+const equal = document.querySelector('.equalButton');
+equal.addEventListener('click', makeMathOperation);
+  
 
 // Add event listeners for all number buttons
 document.querySelectorAll('.NumberButton').forEach(function (button) {
@@ -27,24 +31,30 @@ document.querySelectorAll('.MathOperations').forEach(function (button){
     if (result.value){
       if (!operator){
         value1 = result.value;
+        operator = this.value;
       } else{
-        value2 = result.value;
-      }
-      
-      switch (this.value){
-        case "-": {
-          operator = this.value;
-          
-        }
+        // If operator is not empty, execute math operation and save it in value1, and print the result (no modify it)
+        makeMathOperation();
+        equalBoolean = true;
+        operator = this.value;
       }
     }
   });
 });
 
-
 // Execute Math Operation
-
-
+function makeMathOperation() {
+  if (result.value && value1 && operator){
+    value2 = result.value;
+    let resultNum = '';
+    switch (operator){
+      case "-": {
+        resultNum = value1 - value2;
+        updateResult(resultNum);
+      }
+    }
+  }
+}
 
 
   // CLEAR BUTTON
@@ -62,7 +72,7 @@ clearField.addEventListener('click',
 const deleteNumber = document.querySelector('.back-delete');
 deleteNumber.addEventListener('click',
   function () {
-      if (!equal && result.value){
+      if (equalBoolean && result.value){
         if (!operator){
           value1 = value1.slice(0,-1);
           updateResult(value1);
