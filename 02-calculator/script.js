@@ -7,20 +7,32 @@ let equalBoolean = false;
 
   // EQUAL ACTION
 const equal = document.querySelector('.equalButton');
-equal.addEventListener('click', makeMathOperation);
+equal.addEventListener('click', function(){
+  if(!equalBoolean){
+    makeMathOperation();
+  }
+});
   
 
 // Add event listeners for all number buttons
 document.querySelectorAll('.NumberButton').forEach(function (button) {
     button.addEventListener('click', function () {
-      // If there's no operator, add the clicked digit to the first operand
-      if (!operator) {
-        value1 += this.value;
-        updateResult(value1);
+      if (!equalBoolean) {
+        // If there's no operator, add the clicked digit to the first operand
+        if (!operator) {
+          value1 += this.value;
+          updateResult(value1);
+        } else {
+          // Otherwise, add the clicked digit to the second operand
+          value2 += this.value;
+          updateResult(value2);
+        }
       } else {
-        // Otherwise, add the clicked digit to the second operand
-        value2 += this.value;
-        updateResult(value2);
+        let temporalVariable = this.value;
+        clearAll();
+        value1 = temporalVariable;
+        equalBoolean = false;
+        updateResult(value1);
       }
     });
   });
@@ -35,8 +47,10 @@ document.querySelectorAll('.MathOperations').forEach(function (button){
       } else{
         // If operator is not empty, execute math operation and save it in value1, and print the result (no modify it)
         makeMathOperation();
-        equalBoolean = true;
+        value1 = result.value;
+        value2 = '';
         operator = this.value;
+        equalBoolean = true;
       }
     }
   });
@@ -52,6 +66,7 @@ function makeMathOperation() {
         resultNum = value1 - value2;
         updateResult(resultNum);
       }
+      equalBoolean = true;
     }
   }
 }
@@ -59,14 +74,14 @@ function makeMathOperation() {
 
   // CLEAR BUTTON
 const clearField = document.querySelector('.clear');
-clearField.addEventListener('click',
-    function () {
-        value1 = '';
-        value2 = '';
-        operator = '';
-        updateResult('');
-    }
-);
+clearField.addEventListener('click', clearAll);
+
+function clearAll() {
+  value1 = '';
+  value2 = '';
+  operator = '';
+  updateResult('');
+}
 
 // BACK DELETE
 const deleteNumber = document.querySelector('.back-delete');
