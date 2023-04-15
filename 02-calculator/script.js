@@ -5,7 +5,7 @@ const result = document.getElementById('result');
 
   // EQUAL ACTION
 const equal = document.querySelector('.equalButton');
-equal.addEventListener('click', makeMathOperation);
+equal.addEventListener('click', function(){if (value2) {makeMathOperation()}});
   
 
 // Add event listeners for all number buttons
@@ -33,7 +33,6 @@ document.querySelectorAll('.MathOperations').forEach(function (button){
         operator = this.value;
       } else {
         if (value2) {
-          console.log("sí")
           makeMathOperation();
           operator = this.value;
         }
@@ -54,7 +53,7 @@ function makeMathOperation() {
       }
     }
     clearAll();
-    value1 = resultNum;
+    value1 = resultNum.toString();
     updateResult(value1);
   }
 }
