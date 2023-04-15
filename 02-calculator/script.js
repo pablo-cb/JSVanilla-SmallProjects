@@ -3,21 +3,14 @@ let operator = '';
 let value2 = '';
 const result = document.getElementById('result');
 
-let equalBoolean = false;
-
   // EQUAL ACTION
 const equal = document.querySelector('.equalButton');
-equal.addEventListener('click', function(){
-  if(!equalBoolean){
-    makeMathOperation();
-  }
-});
+equal.addEventListener('click', makeMathOperation);
   
 
 // Add event listeners for all number buttons
 document.querySelectorAll('.NumberButton').forEach(function (button) {
     button.addEventListener('click', function () {
-      if (!equalBoolean) {
         // If there's no operator, add the clicked digit to the first operand
         if (!operator) {
           value1 += this.value;
@@ -27,32 +20,25 @@ document.querySelectorAll('.NumberButton').forEach(function (button) {
           value2 += this.value;
           updateResult(value2);
         }
-      } else {
-        let temporalVariable = this.value;
-        clearAll();
-        value1 = temporalVariable;
-        equalBoolean = false;
-        updateResult(value1);
       }
-    });
+    );
   });
 
   // MATH OPERATORS
 document.querySelectorAll('.MathOperations').forEach(function (button){
   button.addEventListener('click', function () {
-    if (result.value){
+    // if (result.value){
       if (!operator){
         value1 = result.value;
         operator = this.value;
-      } else{
-        // If operator is not empty, execute math operation and save it in value1, and print the result (no modify it)
-        makeMathOperation();
-        value1 = result.value;
-        value2 = '';
-        operator = this.value;
-        equalBoolean = true;
+      } else {
+        if (value2) {
+          console.log("sí")
+          makeMathOperation();
+          operator = this.value;
+        }
       }
-    }
+    // }
   });
 });
 
@@ -63,11 +49,13 @@ function makeMathOperation() {
     let resultNum = '';
     switch (operator){
       case "-": {
-        resultNum = value1 - value2;
-        updateResult(resultNum);
+        resultNum = parseFloat(value1) - parseFloat(value2);
+        break;
       }
-      equalBoolean = true;
     }
+    clearAll();
+    value1 = resultNum;
+    updateResult(value1);
   }
 }
 
@@ -87,7 +75,7 @@ function clearAll() {
 const deleteNumber = document.querySelector('.back-delete');
 deleteNumber.addEventListener('click',
   function () {
-      if (equalBoolean && result.value){
+      if (result.value){
         if (!operator){
           value1 = value1.slice(0,-1);
           updateResult(value1);
