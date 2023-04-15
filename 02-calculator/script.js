@@ -51,6 +51,18 @@ function makeMathOperation() {
         resultNum = parseFloat(value1) - parseFloat(value2);
         break;
       }
+      case "+": {
+        resultNum = parseFloat(value1) + parseFloat(value2);
+        break;
+      }
+      case "*": {
+        resultNum = parseFloat(value1) * parseFloat(value2);
+        break;
+      }
+      case "/": {
+        resultNum = parseFloat(value1) / parseFloat(value2);
+        break;
+      }
     }
     clearAll();
     value1 = resultNum.toString();
