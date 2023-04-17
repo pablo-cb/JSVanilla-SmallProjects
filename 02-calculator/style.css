@@ -25,6 +25,22 @@ p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {
   padding: 0;
 }
 
+#operationPreview {
+  height: 32px;
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+#value1Display, #operatorDisplay, #value2Display {
+  color: #7e7e7e;
+  font-family: inherit;
+  font-size: 150%;
+}
+
+.inactive {
+  display:none;
+}
 button,input,optgroup,select,textarea {
   font-family: inherit;
   font-size: 100%;
